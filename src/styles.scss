@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #262626;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.wrap {
+
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    &.section {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+.boton {
+    background: rgba(0, 0, 0, 0.384);
+    padding: 5px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+
+    &.boton-block {
+        display: block;
+    }
+
+    &.boton-primary {
+        background: #262626;
+        color: #fff;
+    }
+
+    &.boton-disabled {
+        cursor: not-allowed;
+    }
+}

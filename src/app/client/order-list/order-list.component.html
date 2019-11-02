@@ -1,0 +1,18 @@
+<div class="wrap">
+
+    <table class="table-control">
+        <tr>
+            <th>Nombre Del Cliente</th>
+            <th>Apelido Del CLiente</th>
+            <th>ID de la Pelicula</th>
+            <th>Nro de Boletos</th>
+        </tr>
+        <tr *ngFor="let item of orders">
+            <td>{{item.userName}}</td>
+            <td>{{item.userLastName}}</td>
+            <td>{{item.movieId}}</td>
+            <td>{{item.nroBoletos}}</td>
+        </tr>
+    </table>
+
+</div>

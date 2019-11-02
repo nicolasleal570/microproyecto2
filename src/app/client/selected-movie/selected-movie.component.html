@@ -1,0 +1,44 @@
+<div class="wrap section">
+
+    <header>
+        <h1>{{movie.title}}</h1>
+        <p>
+            {{movie.plot}}
+        </p>
+        <p>
+            {{movie.year}}
+        </p>
+        <p>
+            {{movie.director}}, {{movie.writer}}
+        </p>
+        <p>
+            {{movie.actors}}
+        </p>
+        <p>
+            {{movie.genre}}
+        </p>
+
+        <div class="header-footer">
+            <a routerLink="/" class="boton">Volver Atrás</a>
+
+            <ng-container *ngIf="!movie.comingSoon; then makeReserva; else comingSoon">
+            </ng-container>
+
+            <ng-template #makeReserva>
+                <a routerLink="/reservar" class="boton">Reservar</a>
+            </ng-template>
+
+            <ng-template #comingSoon>
+                <span class="boton boton-disabled">Próximamente</span>
+            </ng-template>
+        </div>
+
+
+    </header>
+    <div class="wrap-img">
+        <ng-container *ngFor="let img of movie.images">
+            <img [src]="img" alt="">
+        </ng-container>
+    </div>
+
+</div>

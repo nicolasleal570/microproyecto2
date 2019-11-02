@@ -1,0 +1,55 @@
+<div class="section wrap">
+
+    <app-title title="Todas las Peliculas"></app-title>
+
+    <div class="grid-control">
+
+        <div class="card" *ngFor="let movie of movies">
+
+            <img class="card-header" [src]="movie.poster" alt="{{ movie.title }}">
+
+            <div class="card-body">
+                <h1 class="title">{{movie.title}}</h1>
+                <p>{{movie.plot}}</p>
+            </div>
+
+            <div class="card-footer botones">
+                <i class="fas fa-info"></i>
+                <a [routerLink]="['/movie', movie.id]" class="boton boton-primary">Ver Más</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="section wrap">
+
+    <app-title title="Próximos Estrenos"></app-title>
+
+    <div class="grid-control">
+
+        <ng-container *ngFor="let movie of movies">
+
+            <div class="card" *ngIf="!movie.avaliable">
+
+                <img class="card-header" [src]="movie.poster" alt="{{ movie.title }}">
+
+                <div class="card-body">
+                    <h1 class="title">{{movie.title}}</h1>
+                    <p>{{movie.plot}}</p>
+                </div>
+
+                <div class="card-footer botones">
+                    <i class="fas fa-info"></i>
+                    <a [routerLink]="['/movie', movie.id]" class="boton boton-primary">Ver Más</a>
+                </div>
+
+            </div>
+
+        </ng-container>
+
+    </div>
+
+</div>

@@ -1,0 +1,37 @@
+.grid-control {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 16px;
+    row-gap: 20px;
+
+    .card {
+        width: 100%;
+        overflow: hidden;
+        background: #faf8f0;
+        text-align: center;
+        border-radius: 3px;
+        -webkit-box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.75);
+
+        img.card-header {
+            // width: 100%;
+            height: 200px;
+        }
+
+        .card-body {
+            text-align: justify;
+            padding: 20px;
+
+            h1 {
+                text-align: center;
+            }
+        }
+
+        .card-footer {
+            padding-bottom: 20px;
+        }
+    }
+
+}

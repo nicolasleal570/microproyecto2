@@ -1,0 +1,44 @@
+<div class="section wrap">
+
+    <app-title title="Hacer Reservación"></app-title>
+
+    <form [formGroup]="makeOrder" class="form-control" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+            <input type="text" 
+            placeholder="Ingresar Nombre del Cliente" class="input-control"
+            formControlName="userName"
+            >
+        </div>
+        <div class="input-group">
+            <input type="text" 
+            placeholder="Ingresar Apellido del Cliente" class="input-control"
+            formControlName="userLastName"
+            >
+        </div>
+        <div class="input-group">
+            <select formControlName="movieId">
+                <option value="">Selecciona una Película</option>
+                <option *ngFor="let item of movies" value="{{item.id}}">{{item.title}}</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <select formControlName="nroBoletos">
+                <option value="">Selecciona la cantidad de boletos</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <button type="submit" class="boton boton-primary boton-block">
+                Reservar Película
+            </button>
+        </div>
+    </form>
+
+</div>
