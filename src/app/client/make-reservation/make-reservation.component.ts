@@ -3,6 +3,7 @@ import { MovieService } from 'src/app/services/movie.service';
 import { Movie } from 'src/app/models/movie';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { OrderService } from 'src/app/services/order.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-make-reservation',
@@ -15,7 +16,7 @@ export class MakeReservationComponent implements OnInit {
   makeOrder: FormGroup;
 
   constructor(private movieService: MovieService,
-    private fb: FormBuilder, private orderService: OrderService) {}
+    private fb: FormBuilder, private orderService: OrderService, private route: Router) {}
 
   ngOnInit() {
 
@@ -33,6 +34,7 @@ export class MakeReservationComponent implements OnInit {
 
   onSubmit(){
     this.orderService.addOrder(this.makeOrder.value);
+    this.route.navigate(['/']);
   }
 
 }
